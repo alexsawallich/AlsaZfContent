@@ -1,0 +1,32 @@
+<?php
+return [
+    'alsazfcontent' => [
+        /**
+         * Name of the class you want to use for content-entities. If you use your
+         * own enhanced entity-classes they must extend \AlsaZfCotnent\Entity\Content.
+         * 
+         * default: '\AlsaZfContent\Entity\Content'
+         * 
+         * @var string
+         */
+        'content_entity_name' => \AlsaZfContent\Entity\Content::class,
+        
+        /**
+         * Name of the database-table, where the contents should be stored.
+         * 
+         * default: content
+         * 
+         * @var string
+         */
+        'content_table_name' => 'content',
+        
+        /**
+         * Key of the db-adapter within the service-manager.
+         * 
+         * default: \Zend\Db\Adapter\Adapter
+         * 
+         * @var string
+         */
+        'content_table_adapter_name' => '\Zend\Db\Adapter\Adapter',
+    ]
+];

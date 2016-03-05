@@ -1,0 +1,28 @@
+{
+    "name": "alexsawallich/alsa-zf-content",
+    "description": "A ZF2-Module for managing content. Comes with backend and frontend.",
+    "type": "library",
+    "keywords": [
+        "zf2",
+        "cms",
+        "content"
+    ],
+    "homepage": "https://github.com/alexsawallich/AlsaZfContent",
+    "authors": [
+        {
+            "name": "Alex Sawallich",
+            "email": "kontakt@alexsawallich.de",
+            "homepage": "http://alex.tools"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "zendframework/zendframework": "2.5",
+        "zf-commons/zfc-admin" : "=v0.2.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "AlsaZfContent": "src/"
+        }
+    }
+}

@@ -1,0 +1,64 @@
+<?php
+    $status = [
+        0 => $this->translate('Unpublished', 'alsazfcontent'),
+        1 => $this->translate('Published', 'alsazfcontent')
+    ];
+?>
+<div class="page-header">
+    <h1><?php echo $this->translate('Content', 'alsazfcontent'); ?></h1>
+</div>
+<div class="well well-sm clearfix">
+    <div class="pull-right">
+        <a href="<?php echo $this->url('zfcadmin/alsazfcontent', ['action' => 'add']); ?>" class="btn btn-primary">
+            <i class="glyphicon glyphicon-plus"></i>
+            <?php echo $this->translate('Create', 'alsazfcontent'); ?>
+        </a>
+    </div>
+</div>
+<?php if (count($contents) > 0): ?>
+    <table class="table table-striped">
+        <colgroup>
+            <col style="width: 50px;">
+            <col>
+            <col style="width: 120px;">
+            <col style="width: 120px;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="text-right"><?php echo $this->translate('ID', 'alsazfcontent'); ?></th>
+                <th><?php echo $this->translate('Name', 'alsazfcontent'); ?></th>
+                <th><?php echo $this->translate('Status', 'alsazfcontent'); ?></th>
+                <th class="text-right"><?php echo $this->translate('Actions', 'alsazfcontent'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($contents as $content): ?>
+                <tr>
+                    <td class="text-right"><?php echo $this->escapehtml($content->getContentId()); ?></td>
+                    <td>
+                        <a href="<?php echo $this->url('zfcadmin/alsazfcontent', ['action' => 'edit', 'id' => $content->getContentId()]); ?>"
+                        title="<?php echo $this->translate('Click to edit', 'alsazfcontent'); ?>">
+                            <strong><?php echo $this->escapehtml($content->getContentName()); ?></strong>
+                        </a>
+                    </td>
+                    <td><span class="status-<?php echo $this->escapehtmlattr($content->getContentStatus()); ?> <?php 
+                        echo $this->escapehtmlattr(strtolower($status[$content->getContentStatus()])); ?> label label-<?php
+                        echo ($content->getContentStatus()) == 1 ? 'success' : 'danger'; ?>"><?php echo 
+                        $this->escapehtml($status[$content->getContentStatus()]); ?></span></td>
+                    <td class="text-right">
+                        <a href="<?php echo $this->url('zfcadmin/alsazfcontent', ['action' => 'edit', 'id' => $content->getContentId()]); ?>"
+                        title="<?php echo $this->escapehtmlattr($this->translate('Edit Content', 'alsazfcontent')); ?>" class="btn btn-default">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </a>
+                        <a href="<?php echo $this->url('zfcadmin/alsazfcontent', ['action' => 'delete', 'id' => $content->getContentId()]); ?>"
+                        title="<?php echo $this->escapehtmlattr($this->translate('Delete Content', 'alsazfcontent')); ?>" class="btn btn-danger">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php else: ?>
+    <p class="text-danger"><em><?php echo sprintf($this->translate('There are no contents available yet. Go ahead and %screate%s some!', 'alsazfcontent'),'<a href="' . $this->url('zfcadmin/alsazfcontent', ['action' => 'add']) . '">' , '</a>'); ?></em></p>
+<?php endif; ?>

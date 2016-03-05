@@ -1,0 +1,13 @@
+<div class="page-header">
+    <h1>
+        <?php echo $this->translate('Delete Content', 'alsazfcontent'); ?>
+        <small><?php echo $this->escapehtml($content->getContentName()); ?></small>
+    </h1>
+</div>
+<form action="" method="post">
+    <p>
+        <?php echo sprintf($this->translate('Are you sure you want to delete %s?', 'alsazfcontent'), $this->escapehtml($content->getContentName())); ?>
+    </p>
+    <input type="submit" name="delete" value="<?php echo $this->translate('Delete', 'alsazfcontent'); ?>" class="btn btn-danger">
+    <a href="<?php echo $this->url('zfcadmin/alsazfcontent'); ?>" class="btn btn-success"><?php echo $this->translate('Cancel', 'alsazfcontent'); ?></a>
+</form>
