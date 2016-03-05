@@ -7,7 +7,7 @@ The only task of the frontend is to display a content-item on a single-page, wit
 
 ## Dependencies
 * This module requires [ZfcAdmin](https://github.com/ZF-Commons/ZfcAdmin), since it uses the `zfcadmin`-route for the backend.
-* This module depends on AlsaBase as it uses some of the abstract classes, which can be found there.
+* This module depends on [AlsaBase](https://github.com/alexsawallich/AlsaBase) as it uses some of the abstract classes, which can be found there.
 
 *These dependencies will be installed by composer.*
 
