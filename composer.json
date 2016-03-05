@@ -19,7 +19,7 @@
         "php": ">=5.4",
         "zendframework/zendframework": "2.5",
         "zf-commons/zfc-admin" : "=v0.2.1",
-        "alexsawallich/alsa-base": "master"
+        "alexsawallich/alsa-base": "dev-master"
     },
     "autoload": {
         "psr-0": {
