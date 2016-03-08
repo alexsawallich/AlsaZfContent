@@ -8,7 +8,7 @@ class ContentTable extends AbstractTableGateway
     public function fetchRowById($id)
     {
         $select = $this->getSelect();
-        $select->where->and->equalTo('content_id', (int)$id);
+        $select->where->and->equalTo($this->table.'.content_id', (int)$id);
         return $this->selectWith($select)->current();
     }
 }
