@@ -47,7 +47,7 @@ return [
                         'options' => [
                             'route' => '/content[/:action[/:id]]/',
                             'defaults' => [
-                                '__NAMESPACE__' => '\AlsaZfContent\Controller',
+                                '__NAMESPACE__' => 'AlsaZfContent\Controller',
                                 'controller' => 'Backend',
                                 'action' => 'index'
                             ],
