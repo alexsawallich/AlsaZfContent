@@ -2,8 +2,8 @@
 return [
     'controllers' => [
         'factories' => [
-            '\AlsaZfContent\Controller\Backend' => \AlsaZfContent\Controller\BackendControllerFactory::class,
-            '\AlsaZfContent\Controller\Frontend' => \AlsaZfContent\Controller\FrontendControllerFactory::class
+            'AlsaZfContent\Controller\Backend' => \AlsaZfContent\Controller\BackendControllerFactory::class,
+            'AlsaZfContent\Controller\Frontend' => \AlsaZfContent\Controller\FrontendControllerFactory::class
         ]
     ],
     'form_elements' => [
@@ -31,7 +31,7 @@ return [
                 'options' => [
                     'route' => '/content/:id/',
                     'defaults' => [
-                        '__NAMESPACE__' => '\AlsaZfContent\Controller',
+                        '__NAMESPACE__' => 'AlsaZfContent\Controller',
                         'controller' => 'Frontend',
                         'action' => 'view'
                     ],
@@ -82,7 +82,7 @@ return [
     ],
     'view_manager' => [
         'template_path_stack' => [
-            'AlsaZfContent' => __DIR__ . '/../view',
+            'alsazfcontent' => __DIR__ . '/../view',
         ],
     ],
     'alsazfcontent' => [
